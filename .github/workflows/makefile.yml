@@ -19,8 +19,8 @@ jobs:
     - name: Install dependencies
       run: make install
 
-    - name: Run check
-      run: make check
+    - name: Run pylint
+      run: make lint
 
-    - name: Run distcheck
-      run: make distcheck
+    - name: Run tests
+      run: make test

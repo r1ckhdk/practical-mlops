@@ -31,6 +31,7 @@ jobs:
   docker:
     name: Build and push docker image
     runs-on: ubuntu-latest
+    needs: build
     steps:
     - name: Checkout repository
       uses: actions/checkout@v3
@@ -42,7 +43,7 @@ jobs:
         password: ${{ secrets.DOCKERHUB_TOKEN }}
 
     - name: Docker build
-      run: docker build -t hello r1ckhdk/practical-mlops:latest
+      run: docker build -t r1ckhdk/practical-mlops:latest .
 
     - name: Docker push
-      run: docker push -t hello r1ckhdk/practical-mlops:latest
+      run: docker push r1ckhdk/practical-mlops:latest

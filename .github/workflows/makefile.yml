@@ -11,7 +11,7 @@ jobs:
     name: Build and test
     runs-on: ubuntu-latest
     steps:
-    - name: Chekout
+    - name: Checkout
       uses: actions/checkout@v3
 
     - name: Setup python

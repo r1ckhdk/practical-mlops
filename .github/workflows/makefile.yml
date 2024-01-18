@@ -8,7 +8,7 @@ on:
 
 jobs:
   build:
-    name: Setup Python on Ubuntu
+    name: Setup Python and install dependencies
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
@@ -19,6 +19,10 @@ jobs:
     - name: Install dependencies
       run: make install
 
+  test:
+    name: Run linter and tests
+    needs: build
+    steps:
     - name: Run pylint
       run: make lint
 
